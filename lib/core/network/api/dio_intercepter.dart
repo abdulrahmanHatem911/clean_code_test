@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:clean_code_test/core/utils/logger.dart';
+import 'package:clean_code_test/core/network/api/logger.dart';
 import 'package:dio/dio.dart';
 
 class CustomApiInterceptor extends Interceptor {
@@ -12,9 +12,6 @@ class CustomApiInterceptor extends Interceptor {
     log.red("\x1B[31m${err.response?.data}\x1B[0m");
     log.red("\x1B[37m------ Current Error StatusCode -----\x1B[0m");
     log.red("\x1B[31m${err.response?.statusCode}\x1B[0m");
-
-    // push(NamedRoutes.i.sign_in);
-    // showErrorDialogue("not find");
     return super.onError(err, handler);
   }
 
@@ -25,7 +22,7 @@ class CustomApiInterceptor extends Interceptor {
   ) async {
     log.green("------ Current Response ------");
     log.green(jsonEncode(response.data));
-    log.green("------ Current StatusCode ------");
+    log.blue("------ Current StatusCode ------", "Status Code");
     log.green(jsonEncode(response.statusCode));
     return super.onResponse(response, handler);
   }

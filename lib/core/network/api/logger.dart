@@ -54,7 +54,7 @@ class LoggerDebug {
     return log(
       "${LogColors.blue}$message${LogColors.reset}",
       name:
-          "$headColor♥ ♥ ♥ ${title ?? constTitle ?? ""} ♥ ♥ ♥${LogColors.reset}",
+          "$headColor🌍🌍🌍 ${title ?? constTitle ?? ""} 🌍🌍🌍${LogColors.reset}",
       level: 2000,
     );
   }

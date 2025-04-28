@@ -1,8 +1,6 @@
-import 'dart:convert';
-
 import 'package:clean_code_test/core/network/api/dio_intercepter.dart';
-import 'package:clean_code_test/core/utils/error_handler.dart';
-import 'package:clean_code_test/core/utils/logger.dart';
+import 'package:clean_code_test/core/network/api/error_handler.dart';
+import 'package:clean_code_test/core/network/api/logger.dart';
 import 'package:dio/dio.dart';
 
 import 'api_constant.dart';
@@ -105,7 +103,6 @@ class DioHelper implements NetworkHelper {
         token != null
             ? Options(headers: {'Authorization': 'Bearer $token'})
             : null;
-
     try {
       return await dio!.get(url, queryParameters: query, options: options);
     } catch (error) {
@@ -122,12 +119,10 @@ class DioHelper implements NetworkHelper {
     bool isList = false,
     List<dynamic>? dataList,
   }) async {
-    log.white("🚀Request body: ${jsonEncode(data ?? dataList ?? {})}");
     final options =
         token != null
             ? Options(headers: {'Authorization': 'Bearer $token'})
             : null;
-
     try {
       return await dio!.post(
         url,

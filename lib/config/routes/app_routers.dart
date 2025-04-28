@@ -1,6 +1,10 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:clean_code_test/features/posts/presentation/cubit/posts_cubit.dart';
+import 'package:clean_code_test/features/posts/presentation/screens/all_posts_screen.dart';
+import 'package:clean_code_test/services/service_locator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Routers {
   static const String INITIAL = '/';
@@ -9,6 +13,14 @@ class Routers {
 class RoutersGenerated {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routers.INITIAL:
+        return _buildPageRouteRight(
+          child: BlocProvider(
+            create: (context) => getIt<PostsCubit>(),
+            child: AllPostsScreen(),
+          ),
+          settings: settings,
+        );
       default:
         return undefinedRoute();
     }

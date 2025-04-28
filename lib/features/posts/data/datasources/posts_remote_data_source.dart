@@ -1,6 +1,6 @@
 import 'package:clean_code_test/config/error/exceptions.dart';
-import 'package:clean_code_test/core/network/remote/api_constant.dart';
-import 'package:clean_code_test/core/network/remote/dio_helper.dart';
+import 'package:clean_code_test/core/network/api/api_constant.dart';
+import 'package:clean_code_test/core/network/api/dio_helper.dart';
 import 'package:clean_code_test/features/posts/data/models/posts_model.dart';
 
 abstract class PostsRemoteDataSource {

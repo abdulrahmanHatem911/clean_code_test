@@ -1,7 +1,7 @@
+import 'package:clean_code_test/config/routes/app_routers.dart';
 import 'package:flutter/material.dart';
 
 import 'config/style/theme.dart';
-import 'features/posts/presentation/screens/all_posts_screen.dart';
 
 class PostApp extends StatelessWidget {
   const PostApp({super.key});
@@ -12,7 +12,8 @@ class PostApp extends StatelessWidget {
       theme: AppTheme.lightTheme(),
       darkTheme: AppTheme.darkTheme(),
       themeMode: ThemeMode.light,
-      home: AllPostsScreen(),
+      onGenerateRoute: RoutersGenerated.onGenerateRoute,
+      initialRoute: Routers.INITIAL,
     );
   }
 }

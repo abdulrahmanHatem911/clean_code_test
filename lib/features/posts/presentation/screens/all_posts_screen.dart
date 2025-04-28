@@ -4,8 +4,21 @@ import 'package:clean_code_test/features/posts/presentation/widgets/post_item_wi
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AllPostsScreen extends StatelessWidget {
+class AllPostsScreen extends StatefulWidget {
   const AllPostsScreen({super.key});
+
+  @override
+  State<AllPostsScreen> createState() => _AllPostsScreenState();
+}
+
+class _AllPostsScreenState extends State<AllPostsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<PostsCubit>().getAllPosts();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

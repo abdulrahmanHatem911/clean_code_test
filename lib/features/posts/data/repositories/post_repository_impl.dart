@@ -1,6 +1,6 @@
 import 'package:clean_code_test/config/error/exceptions.dart';
 import 'package:clean_code_test/config/error/failure.dart';
-import 'package:clean_code_test/core/network/remote/netowork_info.dart';
+import 'package:clean_code_test/core/network/api/netowork_info.dart';
 import 'package:clean_code_test/features/posts/data/datasources/post_local_data_source.dart';
 import 'package:clean_code_test/features/posts/data/datasources/posts_remote_data_source.dart';
 import 'package:clean_code_test/features/posts/domain/entities/posts_entity.dart';
